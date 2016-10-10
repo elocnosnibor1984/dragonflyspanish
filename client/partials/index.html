@@ -1,1 +1,71 @@
-<h1>This is my index partial</h1>
+<div ng-include="'includes/navbar.htm'"></div>
+<div class="container">
+<div id="user_avatar">
+	<img ng-if="u.avatar" id="{{u.avatar}}" src="../img/largeTransparent.gif">
+	<img ng-if="!u.avatar" id="dog" src="../img/largeTransparent.gif">
+
+</div>
+<h3 id="user_name">{{u.firstName}} {{u.lastName}}</h3>
+<!-- {{progressBar}} -->
+<div class="progress">
+  <div class="determinate" style="width: {{progressBar}}"></div>
+</div>
+<!-- <a href="#/logout">Logout</a> -->
+<!-- {{u}} -->
+<!-- {{groups}} -->
+<div class="unitDisplay">
+<h5>Unit 1 - Pronouns</h5>
+
+<table>
+	<thead>
+		<tr><th>Module</th><th>Title</th><th>Score</th><th>Last Attempted</th></tr>
+		<!-- <tr><th colspan="4">Unit 1 - Pronouns</th></tr> -->
+	</thead>
+	<tbody>
+		<tr ng-repeat="g in groups | orderBy : 'module' | limitTo: 4" class="indexTable">
+		<td ng-click="goToTeach(g._group.title, g._group._id)">{{g._group.module}}</td>
+		<td ng-click="goToTeach(g._group.title, g._group._id)">{{g._group.title}}</td>
+		<td ng-click="goToTeach(g._group.title, g._group._id)">{{g.right}} / {{g.total}}</td>
+		<td ng-click="goToTeach(g._group.title, g._group._id)"><span ng-if="g.updatedAt != g.createdAt">{{g.updatedAt | date: 'MM/dd/yyyy'}}</span></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div class="unitDisplay">
+<h5>Unit 2 - Verbs & Conjugation</h5>
+<table>
+	<thead>
+		<tr><th>Module</th><th>Title</th><th>Score</th><th>Last Attempted</th></tr>
+		<!-- <tr><th colspan="4">Unit 1 - Pronouns</th></tr> -->
+	</thead>
+	<tbody>
+		<tr ng-repeat="g in groups | orderBy : 'module' | limitTo: 6:4" class="indexTable">
+		<td ng-click="goToTeach(g._group.title, g._group._id)">{{g._group.module}}</td>
+		<td ng-click="goToTeach(g._group.title, g._group._id)">{{g._group.title}}</td>
+		<td ng-click="goToTeach(g._group.title, g._group._id)">{{g.right}} / {{g.total}}</td>
+		<td ng-click="goToTeach(g._group.title, g._group._id)"><span ng-if="g.updatedAt != g.createdAt">{{g.updatedAt | date: 'MM/dd/yyyy'}}</span></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div class="unitDisplay">
+<h5>Unit 3 - Articles & Plural Nouns</h5>
+<table>
+	<thead>
+		<tr><th>Module</th><th>Title</th><th>Score</th><th>Last Attempted</th></tr>
+		<!-- <tr><th colspan="4">Unit 1 - Pronouns</th></tr> -->
+	</thead>
+	<tbody>
+		<tr ng-repeat="g in groups | orderBy : 'module' | limitTo: 6:10" class="indexTable">
+		<td ng-click="goToTeach(g._group.title, g._group._id)">{{g._group.module}}</td>
+		<td ng-click="goToTeach(g._group.title, g._group._id)">{{g._group.title}}</td>
+		<td ng-click="goToTeach(g._group.title, g._group._id)">{{g.right}} / {{g.total}}</td>
+		<td ng-click="goToTeach(g._group.title, g._group._id)"><span ng-if="g.updatedAt != g.createdAt">{{g.updatedAt | date: 'MM/dd/yyyy'}}</span></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+</div>

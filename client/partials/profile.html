@@ -1,0 +1,31 @@
+<div ng-include="'includes/navbar-nonDashboard.htm'"></div>
+<div class="container">
+
+<h5>Update My Profile</h5>
+<form>
+<div input-field>
+	Choose your avatar:
+    <select class="browser-default" ng-model="updateUser.avatar">
+        <option value="dog">dog</option>
+        <option value="cow1">cow1</option>
+        <option value="cow2">cow2</option>
+        <option value="lion">lion</option>
+        <option value="horse">horse</option>
+        <option value="goat">goat</option>
+        <option value="elephant">elephant</option>
+        <option value="rabbit">rabbit</option>
+        <option value="fox">fox</option>
+        <option value="unicorn">unicorn</option>
+        <option value="rooster">rooster</option>
+        <option value="cat">cat</option>
+    </select>
+</div>
+<div>
+	First Name: <input type="text" ng-model="updateUser.firstName">
+	Last Name: <input type="text" ng-model="updateUser.lastName">
+	Email <input type="text" ng-model="updateUser.email">
+	<!-- Password <input type="text" ng-model="updateUser.password"> -->
+	<input type="submit" ng-click="submitUpdateUser()">
+</form>
+
+</div>

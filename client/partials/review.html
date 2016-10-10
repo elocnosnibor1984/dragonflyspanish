@@ -1,0 +1,36 @@
+<div ng-include="'includes/navbar-nonDashboard.htm'"></div>
+
+<div class="container">
+<h3>Review {{title}}</h3>
+
+<div ng-if="wrong[0]"><p>Here's what you need to work on:</p>
+
+<table class="bordered">
+	<thead>
+		<tr><th style="color:red">English</th><th style="color:red">Spanish</th></tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="w in wrong"><td ng-bind-html="w[0]"></td><td ng-bind-html="w[1]"></td>
+	</tr>
+	</tbody>
+</table>
+</div>
+
+<div ng-if="right[0]">
+<p>Here's where you felt strong:</p>
+
+<table class="bordered">
+	<thead>
+		<tr><th style="color:green">English</th><th style="color:green">Spanish</th></tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="r in right"><td ng-bind-html="r[0]"></td><td ng-bind-html="r[1]"></td>
+	</tr>
+	</tbody>
+</table>
+</div>
+
+<button ng-click="redo()" class="btn btn-primary pull right" style="margin-top: 40px;">Redo</button>
+</div>
+<button ng-click="saveResults()" class="btn btn-primary pull right" style="margin-top: 40px;">Save Results</button>
+</div>

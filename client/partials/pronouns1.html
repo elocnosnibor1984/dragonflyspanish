@@ -1,0 +1,31 @@
+<div ng-include="'includes/navbar-nonDashboard.htm'"></div>
+
+<div class="container">
+<h5>Pronouns 1</h5>
+
+<p>Here is the first set of pronouns that we'll be working with (don't worry, it'll get harder soon). Click the words to hear the Spanish pronunciation</p>
+
+<div>
+
+<table class="teachTable center">
+	<thead>
+		<tr><th>Spanish</th><th>English</th></tr>
+	</thead>
+	<tbody>
+		<tr><td><span class="teachSpan">Yo</span></td><td><span class="teachEng">I</span></td></tr>
+		<tr><td><span class="teachSpan">T&uacute;</span></td><td><span class="teachEng">You (informal)</span></td></tr>
+		<tr><td><span class="teachSpan">&Eacute;l</span></td><td><span class="teachEng">He</span></td></tr>
+		<tr><td><span class="teachSpan">Ella</span></td><td><span class="teachEng">She</span></td></tr>
+	</tbody>
+</table>
+
+<!-- {{excercise_id}} -->
+</div>
+<!-- *inf = informal	<span class="blue">blue = English</span> <span class="green">green = Spanish</span> -->
+<div>
+<div ng-click="goToExercises()" class="goToExercises">
+	<button class="btn btn-primary">Begin Exercises</button>
+</div>
+<!-- <a href="#/exercise/{{exercise_id}}"><button>Begin Exercises</button></a> -->
+</div>
+</div>

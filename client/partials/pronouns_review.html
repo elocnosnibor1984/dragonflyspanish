@@ -1,0 +1,46 @@
+<div ng-include="'includes/navbar-nonDashboard.htm'"></div>
+
+<div class="container">
+<h5>Pronouns Review</h5>
+
+<p>Here is the first set of pronouns that we'll be working with (don't worry, it'll get harder soon).</p>
+<p>Click the words to hear the Spanish pronunciation.</p>
+
+<div>
+
+<table>
+	<thead>
+		<tr>
+		<th></th><th colspan="2" class="topHeader">Singular</th><th colspan="2" class="topHeader">Plural</th>
+		</tr>
+		<tr>
+		<th class="bottomHeader">Person</th><th class="bottomHeader">Spanish</th><th class="bottomHeader">English</th><th class="bottomHeader">Spanish</th><th class="bottomHeader">English</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>1st</th><td>Yo</td><td>I</td><td>Nosotros/as</td><td>We masc/fem</td>
+		</tr>
+		<tr>
+			<th>2nd</th><td>T&uacute;</td><td>You (informal)</td><td>Vosotros/as</td><td>You (informal plural)</td>
+		</tr>
+		<tr>
+			<th>2nd</th><td>Usted</td><td>You (formal)</td><td>Ustedes</td><td>You (formal plural)</td>
+		</tr>
+		<tr>
+			<th>3rd</th><td>&Eacute;l</td><td>He</td><td>Ellos</td><td>They (masculine)</td>
+		</tr>
+		<tr>
+			<th>3rd</th><td>Ella</td><td>She</td><td>Ellas</td><td>They (feminine)</td>
+		</tr>
+	</tbody>
+</table>
+
+</div>
+<div>
+<div ng-click="goToExercises()" class="goToExercises">
+	<button class="btn btn-primary">Begin Exercises</button>
+</div>
+<!-- <a href="#/exercise/{{exercise_id}}"><button>Begin Exercises</button></a> -->
+</div>
+</div>

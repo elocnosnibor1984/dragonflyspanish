@@ -1,20 +1,76 @@
 myApp.factory('dummyFactory', function($http){
 
-	// This is my dummyFactory. I usually add this into any project that 
-	// I do. Just so that I can use it for reference as I add new Factories
-	// below we have an example of how we would create a post request, as well 
-	// as how we would create a get request. 
-
-
-	var dummies = []
+	var wrong = []
 
 	var factory = {}
 
-	factory.getDummies = function(callback){
-		$http.get('/dummies').then(function(data){
-			mongooses = data.data;
+	var route = "";
+
+	factory.getQuestions = function(id, callback){
+		$http.get('/questions/'+ id).then(function(data){
+			// mongooses = data.data;
 			callback(data.data);
 		});
+	}
+
+	factory.getGroups = function(user_id, callback){
+		console.log("*********getGroups", user_id);
+		$http.get("/getGroups/"+ user_id).then(function(data){
+			// mongooses = data.data;
+			callback(data.data);
+		});
+	}
+
+	factory.getQuestionGroupAt = function(title, callback){
+		console.log("*********getQuestionGroupAt", title);
+		$http.get("/getQuestionGroupAt/"+ title).then(function(data){
+			// mongooses = data.data;
+			callback(data.data);
+		});
+	}
+
+	factory.updateQuestion = function(update, callback){
+		console.log("*********getQuestionGroupAt", update);
+		$http.post("/updateQuestion/", update).then(function(data){
+			// mongooses = data.data;
+			callback(data.data);
+		});
+	}
+
+	factory.getGroupsToAddQuestion = function(callback){
+		console.log("*********getGroupsToAddQuestion");
+		$http.get("/getGroupsToAddQuestion").then(function(data){
+			// mongooses = data.data;
+			callback(data.data);
+		});
+	}
+
+	factory.getExerciseId = function(id, callback){
+		console.log("getExerciseId");
+		$http.get('/exercises/' + id).then(function(data){
+			// mongooses = data.data;
+			callback(data.data);
+		});
+	}
+
+	factory.saveReview = function(data,callback){
+		wrong = data;
+	}
+
+	factory.getWrong = function(callback){
+		callback(wrong);
+	}
+
+	factory.register = function(data, callback){
+		$http.post('/register', data).then(function(result){
+			callback(result);
+		})
+	}
+
+	factory.login = function(data, callback){
+		$http.post('/login', data).then(function(result){
+			callback(result);
+		})
 	}
 
 	// the info parameter below is the the dummy that we're trying to add into our database
@@ -23,14 +79,32 @@ myApp.factory('dummyFactory', function($http){
 	// I use this as an initial test that I can pass information to my backend.
 	// Check out your server console and you should see the body and the value we pass through 
 	// the url. 
-	factory.addDummy = function(info, callback){
-		$http.post('/dummies/youShouldSeeThisInServerConsoleReqParams', info).then(function(data){
+	factory.addQuestion = function(info, callback){
+		console.log("addQuestion Factory: ", info);
+		$http.post('/addQuestion', info).then(function(data){
 			if(data.error){
 				callback(data);
 			} else {
-				mongooses.push(data)
-				callback(mongooses);
+				// mongooses.push(data)
+				callback(data);
 			}
+		})
+	}
+	factory.addQuestionGroup = function(info, callback){
+		$http.post('/addQuestionGroup', info).then(function(data){
+			if(data.error){
+				callback(data);
+			} else {
+				// mongooses.push(data)
+				callback(data);
+			}
+		})
+	}
+
+	factory.saveResults = function(data, callback){
+		console.log("saveResults: ", data);
+		$http.post('/saveResults', data).then(function(result){
+			callback(result);
 		})
 	}
 

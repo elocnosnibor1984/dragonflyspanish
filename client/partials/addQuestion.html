@@ -1,0 +1,21 @@
+<div class="container">
+<h1>Add a question to the database</h1>
+<!-- {{groups}} -->
+<div>
+<form>
+<p>Question Group Name <input type="text" ng-model="qg.title"></p>
+<p>Module <input type="text" ng-model="qg.module"></p>
+<p><input type="submit" ng-click="addQuestionGroup()" value="Submit"></p>
+</form>
+</div>
+<p></p>
+<div>
+<form>
+<p>Group: <select ng-model="q._questionGroup" class="form-control" ng-options="g.title for g in groups"></select></p>
+<p>Question <input type="text" ng-model="q.question"></p>
+<p>Answer <input type="text" ng-model="q.answer"></p>
+<p>Number <input type="number" ng-model="q.num"></p>
+<p><input type="submit" ng-click="addQuestion()" value="Submit"></p>
+</form>
+</div>
+</div>

@@ -2,8 +2,13 @@
   "name": "MongooseDash",
   "version": "0.0.1",
   "dependencies": {
+    "angular-animate": "^1.5.8",
+    "angular-aria": "^1.5.8",
+    "angular-material": "^1.1.1",
+    "bcryptjs": "^2.3.0",
     "body-parser": "latest",
     "express": "~4.2.0",
+    "materialize-css": "^0.97.7",
     "mongoose": "latest"
   }
 }
