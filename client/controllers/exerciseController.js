@@ -17,11 +17,6 @@ myApp.controller('exerciseController', function($scope, $sce, $location, $routeP
  			console.log("data from getUser: ", data);
  			if(data.user){
  				$scope.u = data.user;
- 			// 	console.log("data before getting groups: ", data.user._id);
- 			// 	dummyFactory.getGroups(data.user._id, function(data){
-				// $scope.groups = data;
-				// console.log("getGroups: ", data);
-	// })
 
  			}
  			else{
@@ -60,30 +55,10 @@ myApp.controller('exerciseController', function($scope, $sce, $location, $routeP
 		sound = "sounds/" + shuffledArray[i].sound;
 		$scope.audio = ngAudio.load(sound);
 	})
-// 	
-// var problems = [
-// 	{"q": "I", "a": "Yo", "num":1},
-// 	{"q": "You (inf)", "a": "T&uacute;", "num":2},
-// 	{"q": "He", "a": "&Eacute;l", "num":3},
-// 	{"q": "She", "a": "Ella", "num":4}
-// ];
 
-	// console.log("problems: ", problems);
-	
-
- //    var shuffledArray = shuffleArray(problems);
-	
-	
-	// console.log("sees problem");
-	// $scope.problem = shuffledArray[i].q;
-	// $scope.answer = shuffledArray[i].a;
-	// $scope.num = shuffledArray[i].num;
-
-	// $scope.sound = ngAudio.load("sounds/hawaii.wav"); // returns NgAudioObject
 	$scope.showAnswer = false;
 
 	$scope.next = function(problem, answer, num){
-		// console.log("problem, answer: ", problem, answer);
 
 		var inWrongAns = false;
 		console.log("wrongAns: ", wrongAns);
@@ -98,9 +73,6 @@ myApp.controller('exerciseController', function($scope, $sce, $location, $routeP
 			rightAns.push(correct);
 		}
 
-
-		// var prob = [problem, answer];
-		// rightAns.push(prob);
 		for(var m =0; m < shuffledArray.length-1; m ++){
 		var temp = shuffledArray[m];
 		shuffledArray[m] = shuffledArray[m+1];
@@ -108,7 +80,6 @@ myApp.controller('exerciseController', function($scope, $sce, $location, $routeP
 	}
 		shuffledArray.pop();
 
-		// console.log("shuffledArray: ", shuffledArray);
 		if(shuffledArray.length > 0){
 		console.log("shuffledArray: ", shuffledArray);
 		$scope.problem = shuffledArray[0].question;
@@ -143,7 +114,6 @@ myApp.controller('exerciseController', function($scope, $sce, $location, $routeP
 		} else {
 			console.log("There's an error at $scope.wrong line 63");
 		}
-		//Is below the reason why stuff keeps stacking up in "wrong"?
 		var inWrongAns = false;
 		console.log("**********wrongAns: ", wrongAns.length);
 		for(var t=0; t<wrongAns.length; t++){
@@ -160,9 +130,6 @@ myApp.controller('exerciseController', function($scope, $sce, $location, $routeP
 	}
 
 	console.log("sound: ", sound);
-	// $scope.audio = ngAudio.load(sound);
-
-	// "http://static1.grsites.com/archive/sounds/birds/birds007.wav"
 
 	$scope.reveal = function(){
 		

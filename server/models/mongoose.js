@@ -37,7 +37,3 @@ var scoreSchema = new mongoose.Schema({
      _group: {type: Schema.Types.ObjectId, ref: 'questionGroupDB'}
 },{timestamps:true});
 mongoose.model('scoreDB', scoreSchema);
-
-
-// for userSchema after testing the login
-//_scores: [{type: Schema.Types.ObjectId, ref: 'questionGroupDB'}]

@@ -2,7 +2,6 @@ myApp.controller('teachController', function($scope,$location, $cookies, $routeP
 	
 	console.log("routeParams: ", $routeParams.id);
 
-
 	//check if user is logged in
 	var user_id = $cookies.get('u_id');
  	console.log("u_id: ", user_id);
@@ -11,11 +10,6 @@ myApp.controller('teachController', function($scope,$location, $cookies, $routeP
  			console.log("data from getUser: ", data);
  			if(data.user){
  				$scope.u = data.user;
- 			// 	console.log("data before getting groups: ", data.user._id);
- 			// 	dummyFactory.getGroups(data.user._id, function(data){
-				// $scope.groups = data;
-				// console.log("getGroups: ", data);
-	// })
 
  			}
  			else{
@@ -26,9 +20,6 @@ myApp.controller('teachController', function($scope,$location, $cookies, $routeP
  	else{
  		$location.url('/login');
  	}
-
-
-
 
 	var excercise_id;
 

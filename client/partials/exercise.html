@@ -1,20 +1,13 @@
 <div ng-include="'includes/navbar-nonDashboard.htm'"></div>
-<!-- <h1>Exercise</h1> -->
-<!-- {{sound}} -->
-<!-- {{show}} -->
+
 <div class="container">
 <div id="excerciseTitle">
 <h3 >{{title}}</h3>
 </div>
-<!-- <div id="exerciseButton" class="pull right">
-<button ng-click="wordDelayOff()" ng-if="showTurnOffWordDelayButton" id>Turn off delay</button>
-<button ng-click="wordDelayOn()" ng-if="!showTurnOffWordDelayButton">Turn on delay</button>
-</div> -->
-<!-- Snippet: {{snippet}} -->
+
 <div ng-bind-html="question">
 </div>
-<!-- <button ng-audio="sounds/hawaii.wav" volume="0.5" start="0.2">Click me</button> -->
-<!-- {{problem}} -->
+
 <h1 ng-bind-html="problem"></h1>
 <div class="answerSpace">
 <h1 ng-if="showAnswer" ng-bind-html="answer"></h1>
@@ -24,5 +17,3 @@
 <button ng-if="showAnswer" ng-click="next(problem, answer, num)" class="IGotThisRight">I got this right</button> <button ng-if="showAnswer" ng-click="wrong(problem, answer, num)" class="SeeAgain">I'd like to see this again</button>
 
 </div>
-<!-- sounds/hawaii.wav -->
-<!-- ng-audio="sounds/cannon.wav" volume="0.5" start="0.2" -->

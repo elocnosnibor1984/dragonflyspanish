@@ -8,47 +8,41 @@ myApp.factory('dummyFactory', function($http){
 
 	factory.getQuestions = function(id, callback){
 		$http.get('/questions/'+ id).then(function(data){
-			// mongooses = data.data;
 			callback(data.data);
 		});
 	}
 
 	factory.getGroups = function(user_id, callback){
-		console.log("*********getGroups", user_id);
+		// console.log("*********getGroups", user_id);
 		$http.get("/getGroups/"+ user_id).then(function(data){
-			// mongooses = data.data;
 			callback(data.data);
 		});
 	}
 
 	factory.getQuestionGroupAt = function(title, callback){
-		console.log("*********getQuestionGroupAt", title);
+		// console.log("*********getQuestionGroupAt", title);
 		$http.get("/getQuestionGroupAt/"+ title).then(function(data){
-			// mongooses = data.data;
 			callback(data.data);
 		});
 	}
 
 	factory.updateQuestion = function(update, callback){
-		console.log("*********getQuestionGroupAt", update);
+		// console.log("*********getQuestionGroupAt", update);
 		$http.post("/updateQuestion/", update).then(function(data){
-			// mongooses = data.data;
 			callback(data.data);
 		});
 	}
 
 	factory.getGroupsToAddQuestion = function(callback){
-		console.log("*********getGroupsToAddQuestion");
+		// console.log("*********getGroupsToAddQuestion");
 		$http.get("/getGroupsToAddQuestion").then(function(data){
-			// mongooses = data.data;
 			callback(data.data);
 		});
 	}
 
 	factory.getExerciseId = function(id, callback){
-		console.log("getExerciseId");
+		// console.log("getExerciseId");
 		$http.get('/exercises/' + id).then(function(data){
-			// mongooses = data.data;
 			callback(data.data);
 		});
 	}

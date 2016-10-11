@@ -33,16 +33,16 @@ module.exports = (function() {
 							console.log("err populating score: ", err);
 						}
 						else{
-							console.log("adding score reference to user");
+							// console.log("adding score reference to user");
 							for(var i=0;i<result.length; i++){
-								console.log("creating lots of scores", i);
+								// console.log("creating lots of scores", i);
 								var score = new scoreDB({
 									right: 0,
 									total: result[i]._questions.length,
 									_user: user._id,
 									_group: result[i]._id
 								})
-								console.log("score: ", score);
+								// console.log("score: ", score);
 								score.save(function(saveError, savedScore){
 									if(saveError){
 										console.log("saveError: ", saveError);
@@ -50,7 +50,7 @@ module.exports = (function() {
 									else{
 										console.log("savedScore: ", savedScore);
 									}
-									console.log("user: ", user, "score: ", score);
+									// console.log("user: ", user, "score: ", score);
 									user._scores.push(score._id);
 									user.save(function(err, result){
 										if(err){
@@ -62,30 +62,22 @@ module.exports = (function() {
 										}
 									});
 								})
-								// console.log("user: ", user, "score: ", score);
-								// user._scores.push(score._id);
 							}
 						}
-						// res.json({cCode: true , msg: "You are registered. Please login"});
 					})
-					// user.save(function(err){
-					// 	if(err){
-					// 		console.log(err)
-					// 	}
-					// })
-					// res.json({cCode: true , msg: "You are registered. Please login"});
+					
 				}
 					})
 			},
 
 			getUser: function(req,res){
-				console.log("on getUser function", req.params.id);
+				// console.log("on getUser function", req.params.id);
 				usersDB.findOne({_id: req.params.id}, function(err, user){
 					if(!user){
 						res.json({cCode: false});
 					}
 					else{
-						console.log("******* getting user data", user);
+						// console.log("******* getting user data", user);
 						res.json({user});
 						// res.json({cCode: true, userData: user});
 				}
@@ -93,7 +85,7 @@ module.exports = (function() {
 			},
 
 			updateUser: function(req, res){
-			console.log(req.body, "req.body.title\n\n\n\n\n");
+			// console.log(req.body, "req.body.title\n\n\n\n\n");
 			//does UserDB need a {} ?
 			usersDB.findOne({_id: req.body.id}, function(err, user){
 				if(!user){
@@ -111,13 +103,13 @@ module.exports = (function() {
 		},
 
 			login: function(req,res){
-			console.log("got to login on backend controller", req.body);
+			// console.log("got to login on backend controller", req.body);
 			usersDB.findOne({email: req.body.email}, function(err, user){
 				if(!user){
 					res.json({cCode: false, error: "Invalid password or login"});
 				}
 				else{
-					console.log("******* first else", user);
+					// console.log("******* first else", user);
 					if(bcrypt.compareSync(req.body.password, user.password)){
 						res.json({cCode: true, id: user._id});
 						// req.session.user = user;

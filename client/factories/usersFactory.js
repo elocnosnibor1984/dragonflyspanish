@@ -5,14 +5,14 @@ myApp.factory('usersFactory', function($http){
 	var message = "";
 
 	factory.getUser = function(id, callback){
-		console.log("getUser: ", id);
+		// console.log("getUser: ", id);
 		$http.get('/user/'+id).then(function(data){
 			callback(data.data);
 		});
 	}
 
 	factory.updateUser = function(userData, callback){
-		console.log("at updateUser");
+		// console.log("at updateUser");
 		$http.post('/updateUser', userData).then(function(data){
 			callback(data.data);
 		})
@@ -20,16 +20,16 @@ myApp.factory('usersFactory', function($http){
 
 	factory.saveMessage =function(data){
 		message = data;
-		console.log("Message on factory: ", data);
+		// console.log("Message on factory: ", data);
 	}
 
 	factory.getMessage =function(callback){
 		callback(message);
-		console.log("Message on factory: ", message);
+		// console.log("Message on factory: ", message);
 	}
 
 	factory.registration = function(data, callback){
-		console.log("on usersFactory", data);
+		// console.log("on usersFactory", data);
 		$http.post('/register', data).then(function(data){
 			callback(data.data);
 		});

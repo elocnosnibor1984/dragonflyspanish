@@ -10,11 +10,6 @@ myApp.controller('reviewController', function($scope, $sce, $location, $cookies,
  			console.log("data from getUser: ", data);
  			if(data.user){
  				$scope.u = data.user;
- 			// 	console.log("data before getting groups: ", data.user._id);
- 			// 	dummyFactory.getGroups(data.user._id, function(data){
-				// $scope.groups = data;
-				// console.log("getGroups: ", data);
-	// })
 
  			}
  			else{
@@ -39,7 +34,6 @@ myApp.controller('reviewController', function($scope, $sce, $location, $cookies,
 	$scope.saveResults =function(){
 		var right = $scope.right.length;
 		var tot = $scope.right.length + $scope.wrong.length;
-		// var score = $scope.right.length / ($scope.right.length + $scope.wrong.length);
 		var user = $cookies.get('u_id');
 		console.log("user: ", user);
 		var packet = {

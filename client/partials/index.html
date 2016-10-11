@@ -6,20 +6,17 @@
 
 </div>
 <h3 id="user_name">{{u.firstName}} {{u.lastName}}</h3>
-<!-- {{progressBar}} -->
+
 <div class="progress">
   <div class="determinate" style="width: {{progressBar}}"></div>
 </div>
-<!-- <a href="#/logout">Logout</a> -->
-<!-- {{u}} -->
-<!-- {{groups}} -->
+
 <div class="unitDisplay">
 <h5>Unit 1 - Pronouns</h5>
 
 <table>
 	<thead>
 		<tr><th>Module</th><th>Title</th><th>Score</th><th>Last Attempted</th></tr>
-		<!-- <tr><th colspan="4">Unit 1 - Pronouns</th></tr> -->
 	</thead>
 	<tbody>
 		<tr ng-repeat="g in groups | orderBy : 'module' | limitTo: 4" class="indexTable">
@@ -37,7 +34,6 @@
 <table>
 	<thead>
 		<tr><th>Module</th><th>Title</th><th>Score</th><th>Last Attempted</th></tr>
-		<!-- <tr><th colspan="4">Unit 1 - Pronouns</th></tr> -->
 	</thead>
 	<tbody>
 		<tr ng-repeat="g in groups | orderBy : 'module' | limitTo: 6:4" class="indexTable">
@@ -55,7 +51,6 @@
 <table>
 	<thead>
 		<tr><th>Module</th><th>Title</th><th>Score</th><th>Last Attempted</th></tr>
-		<!-- <tr><th colspan="4">Unit 1 - Pronouns</th></tr> -->
 	</thead>
 	<tbody>
 		<tr ng-repeat="g in groups | orderBy : 'module' | limitTo: 6:10" class="indexTable">

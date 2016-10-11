@@ -18,7 +18,6 @@ myApp.controller('loginController', function($scope, $sce, $location, $cookies, 
 			$scope.msg = data.error;
 			usersFactory.saveMessage(data.msg);
 		}
-		// console.log(data);
 	})
 }
 
@@ -37,10 +36,5 @@ $scope.loginUser = function(){
 		}
 	})
 }
-
-	// dummyFactory.getWrong(function(data){
-	// 	$scope.wrong = data.w;
-	// 	$scope.right = data.r;
-	// })
 
 })
