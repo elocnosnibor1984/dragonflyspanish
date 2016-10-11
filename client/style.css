@@ -255,3 +255,6 @@ h5{
 .quoted{
 	text-align: right;
 }
+table{
+	margin-bottom: 40px;
+}
